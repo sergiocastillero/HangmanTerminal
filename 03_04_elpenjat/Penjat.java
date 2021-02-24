@@ -17,19 +17,22 @@ public class Penjat{
             
             BufferedReader input = new BufferedReader(fileReader);
             
-            char [] respostes = new char [paraula.length()];
+            
             
         System.out.println("Començem a jugar");
-        
-      
-        for (int i=0; i<paraula.length(); i++){
-        
-               respostes[i] = '*';  //cambia la palabra por *
-   
-                System.out.println("Paraula: "+ respostes); 
-         }
-         
-         
+
+            String linia = input.readLine();                       
+            String str = linia;
+             for (int i=0; i<linia.length(); i++){
+                str= str + "*";
+                System.out.print("Paraula: "+ str); 
+                }
+                
+                System.out.println("Intents disponibles: "+ intento);
+                
+                
+                System.out.println("Introdueix una lletra");
+                 String lletra = Entrada.readLine();
          }
  }
          
