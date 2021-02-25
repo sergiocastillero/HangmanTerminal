@@ -10,29 +10,26 @@ public class Penjat{
     public static void main(String[] args)  throws IOException{
         
         int intento = 10;
-        
         String paraula = "recursos/paraules.txt";
+        String utilitzades = "";
         
             FileReader fileReader = new FileReader(paraula);
-            
             BufferedReader input = new BufferedReader(fileReader);
-            
             
             
         System.out.println("Començem a jugar");
 
             String linia = input.readLine();                       
-            String str = linia;
+             System.out.print("Paraula: ");
              for (int i=0; i<linia.length(); i++){
-                str= str + "*";
-                System.out.print("Paraula: "+ str); 
+                System.out.print("*");
                 }
-                
+                System.out.println();
                 System.out.println("Intents disponibles: "+ intento);
                 
                 
                 System.out.println("Introdueix una lletra");
-                 String lletra = Entrada.readLine();
+                String lletra = Entrada.readLine();
          }
  }
          
