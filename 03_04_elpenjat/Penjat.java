@@ -9,7 +9,7 @@ public class Penjat{
 
     public static void main(String[] args)  throws IOException{
         
-        int intento = 10;
+        int intent = 10;
         String paraula = "recursos/paraules.txt";
         String utilitzades = "";
         
@@ -19,19 +19,27 @@ public class Penjat{
             
         System.out.println("Començem a jugar");
 
-            String linia = input.readLine();                       
-             System.out.print("Paraula: ");
+        String linia = input.readLine();                       
+         System.out.print("Paraula: ");
+         for (int i=0; i<linia.length(); i++){
+            System.out.print("*");
+            }
+         while (intent != 0) { 
+            System.out.println("Intents disponibles: "+ intent);
+            System.out.println("Introdueix una lletra");
+            char lletra = Entrada.readLine().charAt(0);
              for (int i=0; i<linia.length(); i++){
-                System.out.print("*");
+                if (linia.charAt(i) == lletra) {
+                    System.out.print(linia.charAt(i));
+                }else {
+                    System.out.print("*");
                 }
-                System.out.println();
-                System.out.println("Intents disponibles: "+ intento);
-                
-                
-                System.out.println("Introdueix una lletra");
-                String lletra = Entrada.readLine();
+             }
+             System.out.println();
          }
- }
+
+     }
+}
          
     
     
