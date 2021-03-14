@@ -40,14 +40,28 @@ public class Penjat{
             palabraoculta(lletra, linia, arraylletra);
             
             System.out.print("Utilitzades: ");
-            if (lletra != "*") {
+            if (lletra != "*" && lletra.length() == 1) {
                 lletresutilitzades = lletresutilitzades + lletra.toUpperCase();
-                for(int y = 0; y < lletresutilitzades.length(); y++){
-                    if(lletresutilitzades.length() == 1){
-                        System.out.println(lletresutilitzades);
-                    }
+                for(int y=0; y<lletresutilitzades.length(); y++){
+                    System.out.print(lletresutilitzades.charAt(y));
+                    if (y == lletresutilitzades.length()-2){
+                        System.out.print(" i ");
+                    }else if(y != lletresutilitzades.length()-1){
+                        System.out.print(", ");
+                    }  
                 }
-            }else{
+                System.out.println();
+            }else if(lletra.length() > 1){
+                for(int z=0; z<lletresutilitzades.length(); z++){
+                    System.out.print(lletresutilitzades.charAt(z));
+                    if (z == lletresutilitzades.length()-2){
+                        System.out.print(" i ");
+                    }else if(z != lletresutilitzades.length()-1){
+                        System.out.print(", ");
+                    }  
+                }  
+                System.out.println();
+            }else {
                 System.out.println("cap");
             }
             System.out.println("Intents disponibles: "+ intent);
