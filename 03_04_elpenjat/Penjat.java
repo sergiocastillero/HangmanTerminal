@@ -11,6 +11,7 @@ public class Penjat{
         int intent = 10;
         String paraula = "recursos/paraules.txt";
         String utilitzades = "";
+        int paraulesencertades = 0;
         int encerts = 0;
         int fallades = 0;
         int cancel = 0;
@@ -35,8 +36,6 @@ public class Penjat{
                 fallades++;
                 arraylletra = new char[linia.length()];
             }
-            
-            
             palabraoculta(lletra, linia, arraylletra);
             
             System.out.print("Utilitzades: ");
@@ -80,6 +79,7 @@ public class Penjat{
                 intent = 11;
                 numfigura = -1;
                 lletra = "*";
+                lletresutilitzades = "";
                 linia = lecturaparaula.readLine();
                 cancel++;
                 arraylletra = new char[linia.length()];
@@ -91,6 +91,18 @@ public class Penjat{
                 intent--;
                 mostraFigura(numfigura);
                 numfigura++;
+            } else if (linia.contains(lletra) == true  && lletra.length() == 1 && lletresutilitzades.contains(lletra) == false){
+                paraulesencertades++;
+            }
+            if (paraulesencertades == linia.length()){
+                encerts++;
+                System.out.println("Has encertat! La paraula era " + linia);
+                linia = lecturaparaula.readLine();
+                arraylletra = new char[linia.length()];
+                intent = 10;
+                numfigura = 0;
+                lletra = "*";
+                lletresutilitzades = "";
             }
         }
         lecturaparaula.close();
